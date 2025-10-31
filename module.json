@@ -1,0 +1,11 @@
+{
+    "name": "Dashboard",
+    "alias": "dashboard",
+    "description": "Dashboard module",
+    "author": "Sauce Base",
+    "version": "v1.0",
+    "keywords": ["dashboard"],
+    "priority": 0,
+    "providers": ["Modules\\Dashboard\\Providers\\DashboardServiceProvider"],
+    "files": []
+}
