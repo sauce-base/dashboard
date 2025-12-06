@@ -76,14 +76,17 @@ const props = defineProps<{
       </header>
 
       <!-- Page Heading -->
-      <header class="bg-white shadow-sm dark:bg-gray-800" v-if="$slots.header">
+      <header
+        class="flex h-16 shrink-0 items-center gap-2 dark:bg-gray-800"
+        v-if="$slots.header"
+      >
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <slot name="header" />
         </div>
       </header>
 
       <!-- Page Content -->
-      <main>
+      <main class="flex-1">
         <PageTransition>
           <slot />
         </PageTransition>
