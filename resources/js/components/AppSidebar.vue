@@ -20,6 +20,7 @@ import { computed } from 'vue';
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: 'icon',
+  variant: 'inset',
 });
 
 const authStore = useAuthStore();
