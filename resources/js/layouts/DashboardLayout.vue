@@ -16,7 +16,7 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import AppSidebar from '@modules/Dashboard/resources/js/components/AppSidebar.vue';
+import AppSidebar from '@modules/Navigation/resources/js/components/AppSidebar.vue';
 
 const props = defineProps<{
   title?: string;
