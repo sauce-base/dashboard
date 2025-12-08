@@ -7,20 +7,20 @@ import { SquareTerminal } from 'lucide-vue-next';
  * Called during app initialization before mounting
  */
 export function setup(/* app: App */) {
-    console.debug('Dashboard module loaded');
+  console.debug('Dashboard module loaded');
 
-    const navigationStore = useNavigationStore();
+  const navigationStore = useNavigationStore();
 
-    // Register Dashboard navigation item
-    navigationStore.addNavMainItem({
-        id: 'dashboard',
-        type: 'link',
-        title: 'Dashboard',
-        url: route('dashboard'),
-        icon: SquareTerminal,
-        priority: 100,
-        isActive: route().current('dashboard'),
-    });
+  // Register Dashboard navigation item
+  navigationStore.addNavMainItem({
+    id: 'dashboard',
+    type: 'link',
+    title: 'Dashboard',
+    url: route('dashboard'),
+    icon: SquareTerminal,
+    priority: 100,
+    isActive: route().current('dashboard'),
+  });
 }
 
 /**
@@ -28,5 +28,5 @@ export function setup(/* app: App */) {
  * Called after the app has been mounted
  */
 export function afterMount(/* app: App */) {
-    console.debug('Dashboard module after mount logic executed');
+  console.debug('Dashboard module after mount logic executed');
 }
