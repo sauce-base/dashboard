@@ -12,13 +12,13 @@ export function setup(/* app: App */) {
     const navigationStore = useNavigationStore();
 
     // Register Dashboard navigation item
-    navigationStore.addNavMainItem({
+    navigationStore.addItem({
         id: 'dashboard',
         type: 'link',
         title: 'Dashboard',
         url: route('dashboard'),
         icon: SquareTerminal,
-        priority: 100,
+
         isActive: route().current('dashboard'),
     });
 }
