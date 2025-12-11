@@ -18,8 +18,7 @@ export function setup(/* app: App */) {
         title: 'Dashboard',
         url: route('dashboard'),
         icon: SquareTerminal,
-
-        isActive: route().current('dashboard'),
+        isActive: () => route().current('dashboard'),
     });
 }
 
