@@ -9,5 +9,5 @@ To install the Dashboard module, run the following commands:
 ```bash
 composer require saucebase/dashboard
 composer dump-autoload
-php artisan module:enable Dashboard
+docker compose exec workspace php artisan module:enable Dashboard
 ```
