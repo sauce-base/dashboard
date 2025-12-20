@@ -3,6 +3,8 @@
 namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Navigation\Services\NavigationRegistry;
+use Spatie\Navigation\Section;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,29 @@ class DashboardServiceProvider extends ServiceProvider
         $this->registerTranslations();
         $this->registerConfig();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+
+        // Register navigation after routes are loaded
+        $this->app->booted(function () {
+            $this->registerNavigation();
+        });
+    }
+
+    /**
+     * Register navigation items.
+     */
+    protected function registerNavigation(): void
+    {
+        $registry = app(NavigationRegistry::class);
+
+        $registry->app()
+            ->add('Dashboard', route('dashboard'), function (Section $section) {
+                $section->attributes([
+                    'label' => 'Dashboard',
+                    'route' => 'dashboard',
+                    'icon' => 'square-terminal',
+                    'order' => 0,
+                ]);
+            });
     }
 
     /**
